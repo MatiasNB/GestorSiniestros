@@ -28,5 +28,10 @@ namespace Administracion_de_Siniestros
             FormConsultaTalleres f = new FormConsultaTalleres();
             f.ShowDialog();
         }
+
+        private void siniestroNuevo_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

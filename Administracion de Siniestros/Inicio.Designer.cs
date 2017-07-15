@@ -72,31 +72,32 @@
             // aseguradoToolStripMenuItem
             // 
             this.aseguradoToolStripMenuItem.Name = "aseguradoToolStripMenuItem";
-            this.aseguradoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.aseguradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aseguradoToolStripMenuItem.Text = "Asegurado";
             // 
             // siniestroToolStripMenuItem
             // 
             this.siniestroToolStripMenuItem.Name = "siniestroToolStripMenuItem";
-            this.siniestroToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.siniestroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.siniestroToolStripMenuItem.Text = "Siniestro";
+            this.siniestroToolStripMenuItem.Click += new System.EventHandler(this.siniestroNuevo_Click);
             // 
             // inspeccionToolStripMenuItem
             // 
             this.inspeccionToolStripMenuItem.Name = "inspeccionToolStripMenuItem";
-            this.inspeccionToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.inspeccionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inspeccionToolStripMenuItem.Text = "Inspeccion";
             // 
             // reclamoToolStripMenuItem
             // 
             this.reclamoToolStripMenuItem.Name = "reclamoToolStripMenuItem";
-            this.reclamoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.reclamoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reclamoToolStripMenuItem.Text = "Reclamo";
             // 
             // reintegroToolStripMenuItem
             // 
             this.reintegroToolStripMenuItem.Name = "reintegroToolStripMenuItem";
-            this.reintegroToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.reintegroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.reintegroToolStripMenuItem.Text = "Reintegro";
             // 
             // consultaToolStripMenuItem
@@ -111,14 +112,14 @@
             // inspectoresToolStripMenuItem
             // 
             this.inspectoresToolStripMenuItem.Name = "inspectoresToolStripMenuItem";
-            this.inspectoresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.inspectoresToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.inspectoresToolStripMenuItem.Text = "Inspectores";
             this.inspectoresToolStripMenuItem.Click += new System.EventHandler(this.inspectoresToolStripMenuItem_Click);
             // 
             // talleresToolStripMenuItem
             // 
             this.talleresToolStripMenuItem.Name = "talleresToolStripMenuItem";
-            this.talleresToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.talleresToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.talleresToolStripMenuItem.Text = "Talleres";
             this.talleresToolStripMenuItem.Click += new System.EventHandler(this.talleresToolStripMenuItem_Click);
             // 
