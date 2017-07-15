@@ -48,12 +48,12 @@
             this.dataGridView1.Location = new System.Drawing.Point(13, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(610, 480);
+            this.dataGridView1.Size = new System.Drawing.Size(610, 510);
             this.dataGridView1.TabIndex = 0;
             // 
             // buttonFinalizar
             // 
-            this.buttonFinalizar.Location = new System.Drawing.Point(457, 526);
+            this.buttonFinalizar.Location = new System.Drawing.Point(547, 10);
             this.buttonFinalizar.Name = "buttonFinalizar";
             this.buttonFinalizar.Size = new System.Drawing.Size(75, 23);
             this.buttonFinalizar.TabIndex = 1;
@@ -63,28 +63,34 @@
             // 
             // textBox1
             // 
+            this.textBox1.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.textBox1.Location = new System.Drawing.Point(13, 13);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.Size = new System.Drawing.Size(321, 20);
             this.textBox1.TabIndex = 2;
+            this.textBox1.Text = "Buscar Taller";
+            this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // buttonListado
             // 
-            this.buttonListado.Location = new System.Drawing.Point(334, 10);
+            this.buttonListado.Location = new System.Drawing.Point(340, 11);
             this.buttonListado.Name = "buttonListado";
             this.buttonListado.Size = new System.Drawing.Size(120, 23);
             this.buttonListado.TabIndex = 3;
             this.buttonListado.Text = "Ver Solo del Listado";
             this.buttonListado.UseVisualStyleBackColor = true;
+            this.buttonListado.Click += new System.EventHandler(this.buttonListado_Click);
             // 
             // buttonTodos
             // 
-            this.buttonTodos.Location = new System.Drawing.Point(457, 10);
+            this.buttonTodos.Location = new System.Drawing.Point(466, 10);
             this.buttonTodos.Name = "buttonTodos";
             this.buttonTodos.Size = new System.Drawing.Size(75, 23);
             this.buttonTodos.TabIndex = 4;
             this.buttonTodos.Text = "Ver Todos";
             this.buttonTodos.UseVisualStyleBackColor = true;
+            this.buttonTodos.Click += new System.EventHandler(this.buttonTodos_Click);
             // 
             // FormConsultaTalleres
             // 

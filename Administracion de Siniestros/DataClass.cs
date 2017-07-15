@@ -47,10 +47,24 @@ namespace Administracion_de_Siniestros
                 +"from Talleres");
         }
 
+        public DataTable getListTalleres()
+        {
+            return this.getData("select Nombre,Direccion,Telefonos,Mail " +
+                "from Talleres " +
+                "where Listado = 'true'");
+        }
+
+        public DataTable findTaller(string find)
+        {
+            return this.getData("select Nombre,Direccion,Telefonos,Mail  " +
+                "from Talleres "+
+                "where Nombre like '%"+find+"%'");
+        }
         public DataTable getAllInspectores()
         {
             return this.getData("select * "
                 + "from Inspectores");
         }
+
     }
 }
