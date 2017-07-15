@@ -1,0 +1,12 @@
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\bin\Release\Administracion de Siniestros.exe.config
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\bin\Release\Administracion de Siniestros.exe
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\bin\Release\Administracion de Siniestros.pdb
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\bin\Release\System.Data.SQLite.dll
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion de Siniestros.csprojResolveAssemblyReference.cache
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion_de_Siniestros.FormConsulta.resources
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion_de_Siniestros.Inicio.resources
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion_de_Siniestros.Properties.Resources.resources
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion de Siniestros.csproj.GenerateResource.Cache
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion de Siniestros.exe
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion de Siniestros.pdb
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Release\Administracion_de_Siniestros.FormConsultaInspectores.resources
