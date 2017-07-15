@@ -49,11 +49,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataClass.cs" />
-    <Compile Include="FormConsultaTallres.cs">
+    <Compile Include="FormConsultaTalleres.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormConsultaTallres.Designer.cs">
-      <DependentUpon>FormConsultaTallres.cs</DependentUpon>
+    <Compile Include="FormConsultaTalleres.Designer.cs">
+      <DependentUpon>FormConsultaTalleres.cs</DependentUpon>
     </Compile>
     <Compile Include="FormConsultaInspectores.cs">
       <SubType>Form</SubType>
@@ -69,8 +69,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormConsultaTallres.resx">
-      <DependentUpon>FormConsultaTallres.cs</DependentUpon>
+    <EmbeddedResource Include="FormConsultaTalleres.resx">
+      <DependentUpon>FormConsultaTalleres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormConsultaInspectores.resx">
       <DependentUpon>FormConsultaInspectores.cs</DependentUpon>

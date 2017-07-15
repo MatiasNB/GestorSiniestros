@@ -12,24 +12,20 @@ namespace Administracion_de_Siniestros
 {
     public partial class Inicio : Form
     {
-        DataClass data;
         public Inicio()
         {
             InitializeComponent();
-            data = new DataClass();
         }
 
         private void inspectoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConsultaInspectores f = new FormConsultaInspectores((sender as ToolStripMenuItem).Text);
-            f.gridViewSource (data.getData("select * from Inspectores"));
+            FormConsultaInspectores f = new FormConsultaInspectores();
             f.ShowDialog();
         }
 
         private void talleresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormConsultaInspectores f = new FormConsultaInspectores((sender as ToolStripMenuItem).Text);
-            f.gridViewSource(data.getData("select * from Talleres"));
+            FormConsultaTalleres f = new FormConsultaTalleres();
             f.ShowDialog();
         }
     }

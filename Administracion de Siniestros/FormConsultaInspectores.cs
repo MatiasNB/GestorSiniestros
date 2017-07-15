@@ -12,9 +12,17 @@ namespace Administracion_de_Siniestros
 {
     public partial class FormConsultaInspectores : Form
     {
-        public FormConsultaInspectores(string text)
+        private DataClass data;
+        public FormConsultaInspectores()
         {
             InitializeComponent();
+            data = new DataClass();
+            bindingSource1.DataSource = data.getAllInspectores();
+            dataGridView1.DataSource = bindingSource1;
+            dataGridView1.Columns[0].Width = 50;
+            dataGridView1.Columns[1].Width = 100;
+            dataGridView1.Columns[2].Width = 110;
+            dataGridView1.Columns[3].Width = 190;
         }
         public void gridViewSource (DataTable dt)
         {

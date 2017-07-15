@@ -15,6 +15,7 @@ namespace Administracion_de_Siniestros
         private SQLiteConnection sqlite;
         private SQLiteDataAdapter ad;
         private SQLiteCommand cmd;
+        private DataTable returnDT;
 
         public DataClass()
         {
@@ -39,6 +40,17 @@ namespace Administracion_de_Siniestros
             }
             sqlite.Close();
             return dt;
+        }
+        public DataTable getAllTalleres ()
+        {
+            return this.getData("select Nombre,Direccion,Telefonos,Mail "
+                +"from Talleres");
+        }
+
+        public DataTable getAllInspectores()
+        {
+            return this.getData("select * "
+                + "from Inspectores");
         }
     }
 }
