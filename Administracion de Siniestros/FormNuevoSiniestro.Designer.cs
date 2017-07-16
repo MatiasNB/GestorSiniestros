@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelDatosSiniestro = new System.Windows.Forms.Panel();
+            this.labelFDeclaracion = new System.Windows.Forms.Label();
+            this.textBoxFDeclaracion = new System.Windows.Forms.TextBox();
             this.labelCobertura = new System.Windows.Forms.Label();
             this.labelPatente = new System.Windows.Forms.Label();
             this.labelAño = new System.Windows.Forms.Label();
@@ -66,8 +68,6 @@
             this.buttonGenerarOrden = new System.Windows.Forms.Button();
             this.checkBoxSiempreVisible = new System.Windows.Forms.CheckBox();
             this.buttonBuscarAseg = new System.Windows.Forms.Button();
-            this.textBoxFDeclaracion = new System.Windows.Forms.TextBox();
-            this.labelFDeclaracion = new System.Windows.Forms.Label();
             this.panelDatosSiniestro.SuspendLayout();
             this.panelAsegurado.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +98,25 @@
             this.panelDatosSiniestro.Name = "panelDatosSiniestro";
             this.panelDatosSiniestro.Size = new System.Drawing.Size(220, 269);
             this.panelDatosSiniestro.TabIndex = 0;
+            // 
+            // labelFDeclaracion
+            // 
+            this.labelFDeclaracion.AutoSize = true;
+            this.labelFDeclaracion.Location = new System.Drawing.Point(4, 133);
+            this.labelFDeclaracion.Name = "labelFDeclaracion";
+            this.labelFDeclaracion.Size = new System.Drawing.Size(94, 13);
+            this.labelFDeclaracion.TabIndex = 19;
+            this.labelFDeclaracion.Text = "FechaDeclaracion";
+            // 
+            // textBoxFDeclaracion
+            // 
+            this.textBoxFDeclaracion.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBoxFDeclaracion.Location = new System.Drawing.Point(109, 130);
+            this.textBoxFDeclaracion.Name = "textBoxFDeclaracion";
+            this.textBoxFDeclaracion.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFDeclaracion.TabIndex = 18;
+            this.textBoxFDeclaracion.Text = "Fecha Declaracion";
+            this.textBoxFDeclaracion.TextChanged += new System.EventHandler(this.textBoxFDeclaracion_TextChanged);
             // 
             // labelCobertura
             // 
@@ -473,25 +492,6 @@
             this.buttonBuscarAseg.Text = "Buscar Asegurado";
             this.buttonBuscarAseg.UseVisualStyleBackColor = true;
             this.buttonBuscarAseg.Click += new System.EventHandler(this.buttonBuscarAseg_Click);
-            // 
-            // textBoxFDeclaracion
-            // 
-            this.textBoxFDeclaracion.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBoxFDeclaracion.Location = new System.Drawing.Point(109, 130);
-            this.textBoxFDeclaracion.Name = "textBoxFDeclaracion";
-            this.textBoxFDeclaracion.Size = new System.Drawing.Size(100, 20);
-            this.textBoxFDeclaracion.TabIndex = 18;
-            this.textBoxFDeclaracion.Text = "Fecha Declaracion";
-            this.textBoxFDeclaracion.TextChanged += new System.EventHandler(this.textBoxFDeclaracion_TextChanged);
-            // 
-            // labelFDeclaracion
-            // 
-            this.labelFDeclaracion.AutoSize = true;
-            this.labelFDeclaracion.Location = new System.Drawing.Point(4, 133);
-            this.labelFDeclaracion.Name = "labelFDeclaracion";
-            this.labelFDeclaracion.Size = new System.Drawing.Size(94, 13);
-            this.labelFDeclaracion.TabIndex = 19;
-            this.labelFDeclaracion.Text = "FechaDeclaracion";
             // 
             // FormNuevoSiniestro
             // 

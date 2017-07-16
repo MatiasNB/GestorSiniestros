@@ -16,7 +16,7 @@ namespace Administracion_de_Siniestros
         private DataClass data; //auxiliar para conectar con la base de datos
         private DataTable dt; //manejar consultas secundarias
         private DataRow dr;
-        private Boolean asegExiste;
+        private Asegurado aseg;
         //Constructores
 
         public FormNuevoSiniestro()
@@ -158,32 +158,7 @@ namespace Administracion_de_Siniestros
        
         //Botones
 
-        private void GuardarAsegurado()
-        {
-            
-                dt = new DataTable("asegurado");
-                dt.Columns.Add("idCliente", typeof(int));
-                dt.Columns.Add("nombre", typeof(string));
-                dt.Columns.Add("telefono", typeof(string));
-                dt.Columns.Add("celular", typeof(string));
-                dt.Columns.Add("mail", typeof(string));
-                dt.Columns.Add("direccion", typeof(string));
-
-                try
-                {
-                    dr = dt.NewRow();
-                    dr["idCliente"] = Convert.ToInt32(textBoxIdAsegurado.Text);
-                    dr["nombre"] = textBoxNombre.Text;
-                    dr["telefono"] = textBoxTelefono.Text;
-                    dr["celular"] = textBoxCelular.Text;
-                    dr["mail"] = textBoxMail.Text;
-                    dr["direccion"] = textBoxDireccion.Text;
-
-                    data.setDataAsegurado(dr);
-                }
-                catch (FormatException) { MessageBox.Show("Debe ser un numero."); }
-            
-        }
+       
 
         private void GuardarSiniestro()
         {
@@ -215,35 +190,35 @@ namespace Administracion_de_Siniestros
             }
             catch (FormatException) { MessageBox.Show("Debe ser un numero."); }
         }
+
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (!asegExiste)
+            string messege = "¿Desea Guardas/Actualizar los datos del Asegurado?";
+            string caption = "Info Asegurado";
+            if (MessageBox.Show(messege,caption,MessageBoxButtons.YesNo,MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                this.GuardarAsegurado();
+                aseg.Nombre = textBoxNombre.Text;
+                aseg.Telefono = textBoxTelefono.Text;
+                aseg.Celular = textBoxCelular.Text;
+                aseg.Mail = textBoxMail.Text;
+                aseg.Direccion = textBoxDireccion.Text;
+                Asegurado.SaveAsegurado(aseg);
             }
-            this.GuardarSiniestro();
+            //this.GuardarSiniestro();
         }
 
         private void buttonBuscarAseg_Click(object sender, EventArgs e)
-        {
+        {         
             try
             {
-                int i = Convert.ToInt32(this.textBoxIdAsegurado.Text);
-                dt = data.getAsegurado(i);
-                if (dt.Rows.Count == 1)
-                {
-                    asegExiste = true;
-                    this.textBoxNombre.Text = dt.Rows[0]["nombre"].ToString();
-                    this.textBoxTelefono.Text = dt.Rows[0]["telefono"].ToString();
-                    this.textBoxCelular.Text = dt.Rows[0]["celular"].ToString();
-                    this.textBoxMail.Text = dt.Rows[0]["mail"].ToString();
-                    this.textBoxDireccion.Text = dt.Rows[0]["direccion"].ToString();
-                }
-                else
-                {
-                    MessageBox.Show("Asegurado no existe aun. Debera Ingresarlo");
-                    asegExiste = false;
-                }
+                aseg = new Asegurado(Convert.ToInt32(this.textBoxIdAsegurado.Text));
+                
+                this.textBoxNombre.Text = aseg.Nombre;
+                this.textBoxTelefono.Text = aseg.Telefono;
+                this.textBoxCelular.Text = aseg.Celular;
+                this.textBoxMail.Text = aseg.Mail;
+                this.textBoxDireccion.Text = aseg.Direccion;
+                
             }
             catch (FormatException) { MessageBox.Show("Debe ingresar un numero", MessageBoxButtons.OK.ToString()); }
 

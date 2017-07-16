@@ -99,7 +99,7 @@ namespace Administracion_de_Siniestros
         }
         */
         // guardar Asegurado
-        public void setDataAsegurado(DataRow dr)
+        public void SetDataAsegurado(Asegurado aseg)
         {
             try
             {
@@ -108,18 +108,48 @@ namespace Administracion_de_Siniestros
                 cmd.CommandText = "insert into Asegurado (idCliente,nombre,telefono,celular,mail,direccion)" +
                                   "values (@id,@nombre,@telefono,@celular,@mail,@direccion)";
                 cmd.Prepare();
-                cmd.Parameters.AddWithValue("@id",dr["idCliente"]);
-                cmd.Parameters.AddWithValue("@nombre",dr["nombre"]);
-                cmd.Parameters.AddWithValue("@telefono",dr["telefono"]);
-                cmd.Parameters.AddWithValue("@celular", dr["celular"]);
-                cmd.Parameters.AddWithValue("@mail", dr["mail"]);
-                cmd.Parameters.AddWithValue("@direccion", dr["direccion"]);
+                cmd.Parameters.AddWithValue("@id",aseg.Id);
+                cmd.Parameters.AddWithValue("@nombre",aseg.Nombre);
+                cmd.Parameters.AddWithValue("@telefono",aseg.Telefono);
+                cmd.Parameters.AddWithValue("@celular", aseg.Celular);
+                cmd.Parameters.AddWithValue("@mail", aseg.Mail);
+                cmd.Parameters.AddWithValue("@direccion", aseg.Direccion);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Se agrego asegurado");
             }
             catch (SQLiteException ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message,"Error Base de Datos", MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+            sqlite.Close();
+        }
+
+        //UpData Asegurado
+        public void UpdateAsegurado(Asegurado aseg)
+        {
+            try
+            {
+                sqlite.Open();
+                cmd = sqlite.CreateCommand();
+                cmd.CommandText = "update Asegurado " +
+                    "set nombre=@nombre, telefono=@telefono, celular=@celular,mail=@mail,direccion=@direccion " +
+                    "where idCliente=@id";
+
+                cmd.Parameters.Add("@id", DbType.Int32).Value = aseg.Id;
+                cmd.Parameters.Add("@nombre", DbType.String).Value = aseg.Nombre;
+                cmd.Parameters.Add("@telefono", DbType.String).Value = aseg.Telefono;
+                cmd.Parameters.Add("@celular", DbType.String).Value = aseg.Celular;
+                cmd.Parameters.Add("@mail", DbType.String).Value = aseg.Mail;
+                cmd.Parameters.Add("@direccion", DbType.String).Value = aseg.Direccion;
+                cmd.ExecuteNonQuery();
+
+                string messege = "Se ha actualizado Asegurado";
+                string caption = "Listo";
+                MessageBox.Show(messege,caption,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message, "Error Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             sqlite.Close();
         }
