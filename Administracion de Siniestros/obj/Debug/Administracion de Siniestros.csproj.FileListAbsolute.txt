@@ -10,3 +10,4 @@ C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Si
 C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\bin\Debug\System.Data.SQLite.dll
 C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Debug\Administracion_de_Siniestros.FormConsultaInspectores.resources
 C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Debug\Administracion_de_Siniestros.FormConsultaTalleres.resources
+C:\Users\benit\Google Drive\PS\Administracion de Siniestros\Administracion de Siniestros\obj\Debug\Administracion_de_Siniestros.FormNuevoSiniestro.resources

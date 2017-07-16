@@ -17,7 +17,7 @@ namespace Administracion_de_Siniestros
         {
             InitializeComponent();
             data = new DataClass();
-            bindingSource1.DataSource = data.getAllTalleres();
+            bindingSource1.DataSource = data.GetAllTalleres();
             dataGridView1.DataSource = bindingSource1;
             dataGridView1.Columns[0].Width = 120;
             dataGridView1.Columns[1].Width = 130;
@@ -32,7 +32,7 @@ namespace Administracion_de_Siniestros
 
         private void buttonTodos_Click(object sender, EventArgs e)
         {
-            bindingSource1.DataSource = data.getAllTalleres();
+            bindingSource1.DataSource = data.GetAllTalleres();
         }
 
         private void buttonListado_Click(object sender, EventArgs e)

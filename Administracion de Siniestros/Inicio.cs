@@ -31,7 +31,8 @@ namespace Administracion_de_Siniestros
 
         private void siniestroNuevo_Click(object sender, EventArgs e)
         {
-
+            FormNuevoSiniestro f = new FormNuevoSiniestro();
+            f.ShowDialog();
         }
     }
 }

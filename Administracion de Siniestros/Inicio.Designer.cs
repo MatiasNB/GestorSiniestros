@@ -30,7 +30,6 @@
         {
             this.menuInicio = new System.Windows.Forms.MenuStrip();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aseguradoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.siniestroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inspeccionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reclamoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +59,6 @@
             // nuevoToolStripMenuItem
             // 
             this.nuevoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aseguradoToolStripMenuItem,
             this.siniestroToolStripMenuItem,
             this.inspeccionToolStripMenuItem,
             this.reclamoToolStripMenuItem,
@@ -68,12 +66,6 @@
             this.nuevoToolStripMenuItem.Name = "nuevoToolStripMenuItem";
             this.nuevoToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.nuevoToolStripMenuItem.Text = "Nuevo";
-            // 
-            // aseguradoToolStripMenuItem
-            // 
-            this.aseguradoToolStripMenuItem.Name = "aseguradoToolStripMenuItem";
-            this.aseguradoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.aseguradoToolStripMenuItem.Text = "Asegurado";
             // 
             // siniestroToolStripMenuItem
             // 
@@ -172,7 +164,6 @@
 
         private System.Windows.Forms.MenuStrip menuInicio;
         private System.Windows.Forms.ToolStripMenuItem nuevoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aseguradoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem siniestroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inspeccionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reclamoToolStripMenuItem;

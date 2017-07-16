@@ -67,11 +67,11 @@
     <Compile Include="Inicio.Designer.cs">
       <DependentUpon>Inicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="NuevoSiniestro.cs">
+    <Compile Include="FormNuevoSiniestro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NuevoSiniestro.Designer.cs">
-      <DependentUpon>NuevoSiniestro.cs</DependentUpon>
+    <Compile Include="FormNuevoSiniestro.Designer.cs">
+      <DependentUpon>FormNuevoSiniestro.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +84,8 @@
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NuevoSiniestro.resx">
-      <DependentUpon>NuevoSiniestro.cs</DependentUpon>
+    <EmbeddedResource Include="FormNuevoSiniestro.resx">
+      <DependentUpon>FormNuevoSiniestro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
