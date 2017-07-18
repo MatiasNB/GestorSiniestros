@@ -80,24 +80,6 @@ namespace Administracion_de_Siniestros
                 "where idCliente = "+i);
         }
 
-        /*
-        public void setData(string query, DataRow dr)
-        {
-            try
-            {
-                sqlite.Open();
-                cmd = sqlite.CreateCommand();
-                cmd.CommandText = query;
-                cmd.Prepare();
-                cmd.Parameters.AddWithValue
-            }
-            catch (SQLiteException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            sqlite.Close();
-        }
-        */
         // guardar Asegurado
         public void SetDataAsegurado(Asegurado aseg)
         {
@@ -182,6 +164,44 @@ namespace Administracion_de_Siniestros
             catch (SQLiteException ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+            sqlite.Close();
+        }
+
+        //Update Inspecciones Finalizado
+
+        public void SetRowInspecciones(DataRow dr)
+        {
+            try
+            {
+                sqlite.Open();
+                cmd = sqlite.CreateCommand();
+                cmd.CommandText = "update Inspecciones " +
+                    "set finalizar=@Finalizar, fechaActa=@fecha, Observaciones=@Observaciones " +
+                    "where id=@id";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@id", dr["id"]);
+                if (dr["finalizar"].ToString() == "True")
+                {
+                    cmd.Parameters.AddWithValue("@finalizar", dr["finalizar"]);
+                    cmd.Parameters.AddWithValue("@fecha", DateTime.Now.ToLocalTime().Date);
+                }
+                else
+                {
+                    cmd.Parameters.AddWithValue("@finalizar", dr["finalizar"]);
+                    cmd.Parameters.AddWithValue("@fecha", null);
+                }
+                cmd.Parameters.AddWithValue("@Observaciones", dr["Observaciones"]);
+
+                cmd.ExecuteNonQuery();
+
+                string messege = "Se ha actualizado Inspeccion";
+                string caption = "Listo";
+                MessageBox.Show(messege, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message, "Error Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             sqlite.Close();
         }

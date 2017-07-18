@@ -17,6 +17,14 @@ namespace Administracion_de_Siniestros
             InitializeComponent();
         }
 
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            this.ips = new Inspecciones();
+            dataGridViewInspecciones1.DataSource = this.ips.InspeccionesActivas();
+            dataGridViewInspecciones1.MostrarVencimientos();
+            dataGridViewInspecciones1.Inicializar();
+        }
+
         private void inspectoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormConsultaInspectores f = new FormConsultaInspectores();
@@ -33,6 +41,64 @@ namespace Administracion_de_Siniestros
         {
             FormNuevoSiniestro f = new FormNuevoSiniestro();
             f.ShowDialog();
+        }
+
+        private void buttonActivas_Click(object sender, EventArgs e)
+        {
+            dataGridViewInspecciones1.DataSource = this.ips.InspeccionesActivas();
+            dataGridViewInspecciones1.MostrarVencimientos();
+        }
+
+        private void dataGridViewInspecciones1_Sorted(object sender, EventArgs e)
+        {
+            dataGridViewInspecciones1.MostrarVencimientos();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+              switch (comboBox1.SelectedItem.ToString())
+            {
+                case "Todas":
+                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesTodas();
+                    dataGridViewInspecciones1.MostrarVencimientos();
+                    break;
+                case "Eduardo":
+                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(19357);
+                    dataGridViewInspecciones1.MostrarVencimientos();
+                    break;
+                case "Diego":
+                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(28748);
+                    dataGridViewInspecciones1.MostrarVencimientos();
+                    break;
+                case "Fernando":
+                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(62428);
+                    dataGridViewInspecciones1.MostrarVencimientos();
+                    break;
+                case "Dario":
+                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(66748);
+                    dataGridViewInspecciones1.MostrarVencimientos();
+                    break;
+                default: MessageBox.Show("Opcion no disponible","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    break;
+              } 
+        }
+
+        private void buttonNuevaInspeccion_Click(object sender, EventArgs e)
+        {
+            NuevaInspeccion nueva = new NuevaInspeccion();
+            nueva.Show();
+        }
+
+        private void buttonActualiarInspecciones_Click(object sender, EventArgs e)
+        {
+            DataTable dt = dataGridViewInspecciones1.DataSource as DataTable;
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (dr.RowState == DataRowState.Modified)
+                {
+                    this.ips.SetModificado(dr);
+                }
+            }
         }
     }
 }
