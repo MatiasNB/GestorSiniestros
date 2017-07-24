@@ -18,7 +18,7 @@ namespace Administracion_de_Siniestros
 
         public DataClass()
         {
-            sqlite = new SQLiteConnection("Data Source = C:/Users/benit/Google Drive/PS/Bases de Datos/General.db");
+            sqlite = new SQLiteConnection("Data Source = DataBase.db");
         }
         //Genericos
         public DataTable getData (string query)
@@ -177,7 +177,7 @@ namespace Administracion_de_Siniestros
                 sqlite.Open();
                 cmd = sqlite.CreateCommand();
                 cmd.CommandText = "update Inspecciones " +
-                    "set finalizar=@Finalizar, fechaActa=@fecha, Observaciones=@Observaciones " +
+                    "set finalizar=@Finalizar, fechaActa=@fecha, Observaciones=@Observaciones, idSiniestro=@idSiniestro " +
                     "where id=@id";
                 cmd.Prepare();
                 cmd.Parameters.AddWithValue("@id", dr["id"]);
@@ -191,6 +191,7 @@ namespace Administracion_de_Siniestros
                     cmd.Parameters.AddWithValue("@finalizar", dr["finalizar"]);
                     cmd.Parameters.AddWithValue("@fecha", null);
                 }
+                cmd.Parameters.AddWithValue("@idSiniestro", dr["idSiniestro"]);
                 cmd.Parameters.AddWithValue("@Observaciones", dr["Observaciones"]);
 
                 cmd.ExecuteNonQuery();
@@ -198,6 +199,32 @@ namespace Administracion_de_Siniestros
                 string messege = "Se ha actualizado Inspeccion";
                 string caption = "Listo";
                 MessageBox.Show(messege, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (SQLiteException ex)
+            {
+                MessageBox.Show(ex.Message, "Error Base de Datos", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            sqlite.Close();
+        }
+
+
+        //Insert Inspeccion
+
+        public void SetDataInspeccion(Inspecciones ip)
+        {
+            try
+            {
+                sqlite.Open();
+                cmd = sqlite.CreateCommand();
+                cmd.CommandText = "insert into Inspecciones (idInspector,idSiniestro,fechaIP,Observaciones) " +
+                                  "values (@idInspector,@idSiniestro,@fechaIP,@Observaciones)";
+                cmd.Prepare();
+                cmd.Parameters.AddWithValue("@idInspector", ip.IdInspector);
+                cmd.Parameters.AddWithValue("@idSiniestro", ip.IdSiniestro);
+                cmd.Parameters.AddWithValue("@fechaIP", ip.FechaIp);
+                cmd.Parameters.AddWithValue("@Observaciones", ip.Observaciones);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Se agrego Inspeccion");
             }
             catch (SQLiteException ex)
             {

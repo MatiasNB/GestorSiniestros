@@ -63,6 +63,7 @@
             this.fechaIPDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.demoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.finalizarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.textBoxFindInspecciones = new System.Windows.Forms.TextBox();
             this.menuInicio.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tapInspecciones.SuspendLayout();
@@ -78,7 +79,7 @@
             this.vencimientosToolStripMenuItem});
             this.menuInicio.Location = new System.Drawing.Point(0, 0);
             this.menuInicio.Name = "menuInicio";
-            this.menuInicio.Size = new System.Drawing.Size(474, 24);
+            this.menuInicio.Size = new System.Drawing.Size(669, 24);
             this.menuInicio.TabIndex = 0;
             this.menuInicio.Text = "menuInicio";
             // 
@@ -95,6 +96,7 @@
             // 
             // siniestroToolStripMenuItem
             // 
+            this.siniestroToolStripMenuItem.Enabled = false;
             this.siniestroToolStripMenuItem.Name = "siniestroToolStripMenuItem";
             this.siniestroToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.siniestroToolStripMenuItem.Text = "Siniestro";
@@ -108,12 +110,14 @@
             // 
             // reclamoToolStripMenuItem
             // 
+            this.reclamoToolStripMenuItem.Enabled = false;
             this.reclamoToolStripMenuItem.Name = "reclamoToolStripMenuItem";
             this.reclamoToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.reclamoToolStripMenuItem.Text = "Reclamo";
             // 
             // reintegroToolStripMenuItem
             // 
+            this.reintegroToolStripMenuItem.Enabled = false;
             this.reintegroToolStripMenuItem.Name = "reintegroToolStripMenuItem";
             this.reintegroToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.reintegroToolStripMenuItem.Text = "Reintegro";
@@ -153,18 +157,21 @@
             // 
             // inspeccionesToolStripMenuItem
             // 
+            this.inspeccionesToolStripMenuItem.Enabled = false;
             this.inspeccionesToolStripMenuItem.Name = "inspeccionesToolStripMenuItem";
             this.inspeccionesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.inspeccionesToolStripMenuItem.Text = "Inspecciones";
             // 
             // reclamosToolStripMenuItem
             // 
+            this.reclamosToolStripMenuItem.Enabled = false;
             this.reclamosToolStripMenuItem.Name = "reclamosToolStripMenuItem";
             this.reclamosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.reclamosToolStripMenuItem.Text = "Reclamos";
             // 
             // reintegrosToolStripMenuItem
             // 
+            this.reintegrosToolStripMenuItem.Enabled = false;
             this.reintegrosToolStripMenuItem.Name = "reintegrosToolStripMenuItem";
             this.reintegrosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.reintegrosToolStripMenuItem.Text = "Reintegros";
@@ -177,7 +184,7 @@
             this.tabControl.Location = new System.Drawing.Point(0, 24);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(474, 237);
+            this.tabControl.Size = new System.Drawing.Size(669, 237);
             this.tabControl.TabIndex = 1;
             // 
             // tapInspecciones
@@ -187,7 +194,7 @@
             this.tapInspecciones.Location = new System.Drawing.Point(4, 22);
             this.tapInspecciones.Name = "tapInspecciones";
             this.tapInspecciones.Padding = new System.Windows.Forms.Padding(3);
-            this.tapInspecciones.Size = new System.Drawing.Size(466, 211);
+            this.tapInspecciones.Size = new System.Drawing.Size(661, 211);
             this.tapInspecciones.TabIndex = 0;
             this.tapInspecciones.Text = "Inspecciones";
             this.tapInspecciones.UseVisualStyleBackColor = true;
@@ -202,13 +209,14 @@
             this.dataGridViewInspecciones1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewInspecciones1.Location = new System.Drawing.Point(3, 38);
             this.dataGridViewInspecciones1.Name = "dataGridViewInspecciones1";
-            this.dataGridViewInspecciones1.Size = new System.Drawing.Size(460, 170);
+            this.dataGridViewInspecciones1.Size = new System.Drawing.Size(655, 170);
             this.dataGridViewInspecciones1.TabIndex = 1;
             this.dataGridViewInspecciones1.Sorted += new System.EventHandler(this.dataGridViewInspecciones1_Sorted);
             // 
             // panelOpcionesInspectores
             // 
             this.panelOpcionesInspectores.BackColor = System.Drawing.Color.DarkGray;
+            this.panelOpcionesInspectores.Controls.Add(this.textBoxFindInspecciones);
             this.panelOpcionesInspectores.Controls.Add(this.buttonReporteInspectores);
             this.panelOpcionesInspectores.Controls.Add(this.buttonActivas);
             this.panelOpcionesInspectores.Controls.Add(this.buttonActualiarInspecciones);
@@ -217,13 +225,13 @@
             this.panelOpcionesInspectores.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelOpcionesInspectores.Location = new System.Drawing.Point(3, 3);
             this.panelOpcionesInspectores.Name = "panelOpcionesInspectores";
-            this.panelOpcionesInspectores.Size = new System.Drawing.Size(460, 35);
+            this.panelOpcionesInspectores.Size = new System.Drawing.Size(655, 35);
             this.panelOpcionesInspectores.TabIndex = 0;
             // 
             // buttonReporteInspectores
             // 
             this.buttonReporteInspectores.Enabled = false;
-            this.buttonReporteInspectores.Location = new System.Drawing.Point(378, 5);
+            this.buttonReporteInspectores.Location = new System.Drawing.Point(483, 4);
             this.buttonReporteInspectores.Name = "buttonReporteInspectores";
             this.buttonReporteInspectores.Size = new System.Drawing.Size(75, 23);
             this.buttonReporteInspectores.TabIndex = 4;
@@ -232,7 +240,7 @@
             // 
             // buttonActivas
             // 
-            this.buttonActivas.Location = new System.Drawing.Point(297, 5);
+            this.buttonActivas.Location = new System.Drawing.Point(402, 4);
             this.buttonActivas.Name = "buttonActivas";
             this.buttonActivas.Size = new System.Drawing.Size(75, 23);
             this.buttonActivas.TabIndex = 3;
@@ -242,7 +250,7 @@
             // 
             // buttonActualiarInspecciones
             // 
-            this.buttonActualiarInspecciones.Location = new System.Drawing.Point(216, 5);
+            this.buttonActualiarInspecciones.Location = new System.Drawing.Point(87, 4);
             this.buttonActualiarInspecciones.Name = "buttonActualiarInspecciones";
             this.buttonActualiarInspecciones.Size = new System.Drawing.Size(75, 23);
             this.buttonActualiarInspecciones.TabIndex = 2;
@@ -260,7 +268,7 @@
             "Fernando",
             "Dario",
             "Maximiliano"});
-            this.comboBox1.Location = new System.Drawing.Point(88, 5);
+            this.comboBox1.Location = new System.Drawing.Point(168, 4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 1;
@@ -364,11 +372,20 @@
             this.finalizarDataGridViewCheckBoxColumn.Name = "finalizarDataGridViewCheckBoxColumn";
             this.finalizarDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
+            // textBoxFindInspecciones
+            // 
+            this.textBoxFindInspecciones.Location = new System.Drawing.Point(296, 4);
+            this.textBoxFindInspecciones.Name = "textBoxFindInspecciones";
+            this.textBoxFindInspecciones.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFindInspecciones.TabIndex = 5;
+            this.textBoxFindInspecciones.Text = "Buscar N° Siniestro";
+            this.textBoxFindInspecciones.TextChanged += new System.EventHandler(this.textBoxFindInspecciones_TextChanged);
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 261);
+            this.ClientSize = new System.Drawing.Size(669, 261);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuInicio);
             this.MainMenuStrip = this.menuInicio;
@@ -382,6 +399,7 @@
             this.tapInspecciones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewInspecciones1)).EndInit();
             this.panelOpcionesInspectores.ResumeLayout(false);
+            this.panelOpcionesInspectores.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,6 +443,7 @@
         private System.Windows.Forms.Button buttonReporteInspectores;
         private System.Windows.Forms.Button buttonActivas;
         private System.Windows.Forms.Button buttonActualiarInspecciones;
+        private System.Windows.Forms.TextBox textBoxFindInspecciones;
     }
 }
 

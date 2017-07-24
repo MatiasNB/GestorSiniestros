@@ -57,25 +57,25 @@ namespace Administracion_de_Siniestros
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
               switch (comboBox1.SelectedItem.ToString())
-            {
+              {
                 case "Todas":
                     dataGridViewInspecciones1.DataSource = this.ips.InspeccionesTodas();
                     dataGridViewInspecciones1.MostrarVencimientos();
                     break;
                 case "Eduardo":
-                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(19357);
+                    dataGridViewInspecciones1.DataSource = this.ips.GetInspeccionesInspector(19357);
                     dataGridViewInspecciones1.MostrarVencimientos();
                     break;
                 case "Diego":
-                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(28748);
+                    dataGridViewInspecciones1.DataSource = this.ips.GetInspeccionesInspector(28198);
                     dataGridViewInspecciones1.MostrarVencimientos();
                     break;
                 case "Fernando":
-                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(62428);
+                    dataGridViewInspecciones1.DataSource = this.ips.GetInspeccionesInspector(62428);
                     dataGridViewInspecciones1.MostrarVencimientos();
                     break;
                 case "Dario":
-                    dataGridViewInspecciones1.DataSource = this.ips.InspeccionesInspector(66748);
+                    dataGridViewInspecciones1.DataSource = this.ips.GetInspeccionesInspector(66748);
                     dataGridViewInspecciones1.MostrarVencimientos();
                     break;
                 default: MessageBox.Show("Opcion no disponible","Error",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
@@ -99,6 +99,12 @@ namespace Administracion_de_Siniestros
                     this.ips.SetModificado(dr);
                 }
             }
+        }
+
+        private void textBoxFindInspecciones_TextChanged(object sender, EventArgs e)
+        {
+            dataGridViewInspecciones1.DataSource = this.ips.FindInspeccion(textBoxFindInspecciones.Text);
+            dataGridViewInspecciones1.MostrarVencimientos();
         }
     }
 }

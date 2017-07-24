@@ -38,7 +38,7 @@ namespace Administracion_de_Siniestros
             return dt;
         }
 
-        public DataTable InspeccionesInspector(int id)
+        public DataTable GetInspeccionesInspector(int id)
         {
             dt = data.getData("select ip.id,i.Nombre,ip.idSiniestro,ip.fechaIP,ip.fechaActa," +
                 "(case " +
@@ -48,9 +48,26 @@ namespace Administracion_de_Siniestros
                 "where ip.idInspector=i.id and i.id="+id);
             return dt;
         }
+
+        public DataTable FindInspeccion(string find)
+        {
+            dt = data.getData("select ip.id,i.Nombre,ip.idSiniestro,ip.fechaIP,ip.fechaActa," +
+                "(case " +
+                "when ip.fechaActa is null then (julianday(date('now','localtime'))-julianday(ip.fechaIP)) " +
+                "when ip.fechaActa is not null then (julianday(ip.fechaActa)-julianday(ip.fechaIP))end) as demora, ip.finalizar,ip.Observaciones " +
+                "from Inspecciones ip, Inspectores i " +
+                "where ip.idInspector=i.id and ip.idSiniestro like '%"+find+"%'");
+            return dt;
+        }
+
         public void SetModificado(DataRow dr)
         {
             data.SetRowInspecciones(dr);
+        }
+
+        public void InsertInspeccion()
+        {
+            data.SetDataInspeccion(this);
         }
     }
 }

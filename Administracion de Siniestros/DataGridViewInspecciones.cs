@@ -33,7 +33,7 @@ namespace Administracion_de_Siniestros
             this.Columns["Nombre"].ReadOnly = true;
             this.Columns["idSiniestro"].Width = 90;
             this.Columns["idSiniestro"].HeaderText = "N° Siniestro";
-            this.Columns["idSiniestro"].ReadOnly = true;
+            this.Columns["idSiniestro"].ReadOnly = false;
             this.Columns["fechaIP"].Width = 80;
             this.Columns["fechaIP"].HeaderText = "Fecha Inspecion";
             this.Columns["fechaIP"].ReadOnly = true;
